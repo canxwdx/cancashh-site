@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CanCashh Sitesi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-text"></div>
+
+  <div class="container">
+    <div class="logo">
+      <span class="infinity">∞</span>
+    </div>
+
+    <div class="clock-date">
+      <div id="clock">00:00:00</div>
+      <div id="date">01.01.2025</div>
+    </div>
+
+    <div class="footer">
+      <p>Bu site <strong>@cancashh</strong> tarafından tasarlanmıştır</p>
+    </div>
+  </div>
+
+  <script>
+    // Saat - tarih
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString("tr-TR");
+      const date = now.toLocaleDateString("tr-TR");
+      document.getElementById("clock").textContent = time;
+      document.getElementById("date").textContent = date;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Arka plan @cancashh yazılarını çoğalt
+    const background = document.querySelector(".background-text");
+    let text = "";
+    for (let i = 0; i < 3000; i++) {
+  text += "@cancashh ";
+}    background.innerText = text;
+  </script>
+</body>
+</html>
