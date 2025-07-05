@@ -4,44 +4,222 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CanCashh Sitesi</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Courier New', monospace;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: background 0.3s ease;
+    }
+
+    /* Dijital Arka Plan Dairesi */
+    .bg-circle {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,255,204,0.05), transparent 70%);
+      animation: spin 60s linear infinite;
+      top: -200px;
+      left: -200px;
+      z-index: 0;
+      filter: blur(10px);
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Ana Kutu */
+    .container {
+      position: relative;
+      z-index: 2;
+      padding: 60px;
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 25px;
+      border: 2px solid #00ffaa;
+      box-shadow: 0 0 30px #00ffaa88, 0 0 60px #00ffaa55 inset;
+      text-align: center;
+    }
+
+    /* Sonsuzluk İşareti */
+    .infinity {
+      font-size: 110px;
+      color: #00ffcc;
+      animation: pulse 2s infinite;
+      text-shadow: 0 0 12px #00ffcc, 0 0 25px #00ffccaa;
+    }
+
+    /* Saat ve Tarih */
+    .clock-date {
+      margin: 30px 0;
+    }
+
+    #clock {
+      font-size: 40px;
+      color: #00ffaa;
+      text-shadow: 0 0 10px #00ffaa;
+    }
+
+    #date {
+      font-size: 22px;
+      color: #55ff55;
+      margin-top: 5px;
+    }
+
+    /* Alt Yazı */
+    .footer p {
+      font-size: 22px;
+      color: #00ffcc;
+      text-shadow: 0 0 6px #00ffcc;
+    }
+
+    /* Üst Duyuru */
+    .announcement {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 16px;
+      color: #00ffcc;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-align: center;
+      line-height: 1.6;
+      z-index: 3;
+      border: 1px solid #00ffaa66;
+      box-shadow: 0 0 10px #00ffaa44;
+      animation: pulse 2.5s infinite;
+    }
+
+    /* İletişim Butonu */
+    .inline-contact {
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: #00ffcc;
+      text-shadow: 0 0 6px #00ffcc;
+      animation: pulse 2.5s infinite;
+    }
+
+    .inline-contact a {
+      color: #00ffee;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 0 0 8px #00ffee, 0 0 20px #00ffee88;
+      transition: color 0.3s ease;
+    }
+
+    .inline-contact a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 12px #ffffff;
+    }
+
+    /* Köşe Yazılar */
+    .corner {
+      position: absolute;
+      font-size: 16px;
+      color: #00ffccaa;
+      text-shadow: 0 0 6px #00ffcc;
+      letter-spacing: 1px;
+      opacity: 0.85;
+    }
+
+    .top-left    { top: 10px; left: 15px; }
+    .top-right   { top: 10px; right: 15px; }
+    .bottom-left { bottom: 10px; left: 15px; }
+    .bottom-right{ bottom: 10px; right: 15px; }
+
+    /* Parlayan Yazı Efekti */
+    @keyframes pulse {
+      0%   { opacity: 0.4; text-shadow: 0 0 5px #00ffcc; }
+      50%  { opacity: 1; text-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffccaa; }
+      100% { opacity: 0.4; text-shadow: 0 0 5px #00ffcc; }
+    }
+
+    .pulse {
+      animation: pulse 2.5s infinite;
+    }
+  </style>
 </head>
 <body>
-  <div class="background-text"></div>
 
+  <!-- Dijital dönen daire -->
+  <div class="bg-circle"></div>
+
+  <!-- Köşe Yazıları -->
+  <div class="corner top-left pulse">💠 cancashh 💠</div>
+  <div class="corner top-right pulse">∞ design ∞</div>
+  <div class="corner bottom-left pulse">🗡 cybermode 🗡</div>
+  <div class="corner bottom-right pulse">💻 v5.2 💻</div>
+
+  <!-- Üst Duyuru -->
+  <div class="announcement pulse">
+    İlk sürümümüz yeni güncelleme ile sizlere hazır.<br>
+    Öneri ve iletişim için <strong>Instagram: @cancashh</strong><br>
+    DM üzerinden belirtebilirsiniz.
+  </div>
+
+  <!-- Ana Kutu -->
   <div class="container">
+
+    <!-- Instagram iletişim -->
+    <div class="inline-contact">
+      📬 <a href="https://www.instagram.com/cancashh?igsh=NDJlOHdtcGR3eGYy&utm_source=qr" target="_blank">
+        İletişim: Instagram @cancashh
+      </a>
+    </div>
+
+    <!-- Sonsuzluk İşareti -->
     <div class="logo">
       <span class="infinity">∞</span>
     </div>
 
+    <!-- Saat ve Tarih -->
     <div class="clock-date">
       <div id="clock">00:00:00</div>
       <div id="date">01.01.2025</div>
     </div>
 
+    <!-- Alt Yazı -->
     <div class="footer">
       <p>Bu site <strong>@cancashh</strong> tarafından tasarlanmıştır</p>
     </div>
+
   </div>
 
+  <!-- JavaScript -->
   <script>
-    // Saat - tarih
-    function updateClock() {
-      const now = new Date();
-      const time = now.toLocaleTimeString("tr-TR");
-      const date = now.toLocaleDateString("tr-TR");
-      document.getElementById("clock").textContent = time;
-      document.getElementById("date").textContent = date;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
+    window.onload = function () {
+      function updateClock() {
+        const now = new Date();
+        const time = now.toLocaleTimeString("tr-TR", { hour12: false });
+        const date = now.toLocaleDateString("tr-TR");
+        document.getElementById("clock").textContent = time;
+        document.getElementById("date").textContent = date;
+      }
 
-    // Arka plan @cancashh yazılarını çoğalt
-    const background = document.querySelector(".background-text");
-    let text = "";
-    for (let i = 0; i < 3000; i++) {
-  text += "@cancashh ";
-}    background.innerText = text;
+      updateClock(); // İlk çalıştır
+      setInterval(updateClock, 1000); // Her saniye güncelle
+    };
+
+    // Mouse ışık efekti
+    document.addEventListener('mousemove', function(e) {
+      document.body.style.background = radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(0,255,204,0.08), #000);
+    });
   </script>
 </body>
 </html>
